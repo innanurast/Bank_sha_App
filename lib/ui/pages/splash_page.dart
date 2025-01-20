@@ -20,7 +20,7 @@ class _SplashPageState extends State<SplashPage> {
 
     //memberikan jeda waktu 2 detik untuk ke hal onboardingpage
     Timer(const Duration(seconds: 2), () {
-      Navigator.pushNamed(context, '/onboarding');
+      Navigator.pushNamedAndRemoveUntil(context, '/onboarding', (route) => false);
      });
   }
 

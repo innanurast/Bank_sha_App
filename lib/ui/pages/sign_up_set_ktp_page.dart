@@ -106,7 +106,9 @@ class SignUpSetKtpPage extends StatelessWidget {
           ),
           CustomTextButton(
             title: 'Skip for Now',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/sign-up-success');
+            },
           ),
         ],
       ),
