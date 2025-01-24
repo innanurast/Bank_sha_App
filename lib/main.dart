@@ -1,8 +1,8 @@
 // import 'dart:js';
 
-import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/pages/home_page.dart';
 import 'package:bank_sha/ui/pages/onboarding_page.dart';
+import 'package:bank_sha/ui/pages/profile_page.dart';
 import 'package:bank_sha/ui/pages/sign-up_page.dart';
 import 'package:bank_sha/ui/pages/sign_in_page.dart';
 import 'package:bank_sha/ui/pages/sign_up_set_ktp_page.dart';
@@ -15,7 +15,7 @@ void main() => runApp(
     const MyApp()); //fungsi main ini digunakan untuk mengeksekusi ketika program dijalankan
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         '/sign-up-set-ktp': (context) => const SignUpSetKtpPage(),
         '/sign-up-success': (context) => const SignUpSuccessPage(),
         '/home': (context) => const HomePage(),
+        '/profile': (context) => const ProfilePage(),
       },
     );
   }

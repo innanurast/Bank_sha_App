@@ -94,7 +94,7 @@ class SignUpSetProfilePage extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                CustomFormField(
+                const CustomFormField(
                   title: 'Set PIN (6 digit number)',
                   obscureText: true, //digunakan untuk menampilkan password secara tersembunyi mjd *
                 ),

@@ -1,12 +1,10 @@
 import 'package:bank_sha/shared/theme.dart';
-import 'package:bank_sha/ui/pages/sign_in_page.dart';
 import 'package:bank_sha/ui/widgets/buttons.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class OnboardingPage extends StatefulWidget {
-  const OnboardingPage({ Key? key }) : super(key: key);
+  const OnboardingPage({ super.key });
 
   @override
   State<OnboardingPage> createState() => _OnboardingPageState();
