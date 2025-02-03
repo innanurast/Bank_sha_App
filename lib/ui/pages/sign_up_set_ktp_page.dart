@@ -8,7 +8,7 @@ class SignUpSetKtpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightBackgroundColor,
+      // backgroundColor: lightBackgroundColor,
       //jika menggunakan listview maka diperlukan widget untuk mengatur ukuran yaitu dg container
       body: ListView(
         padding: const EdgeInsets.symmetric(

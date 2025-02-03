@@ -4,7 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatefulWidget {
-  const OnboardingPage({ super.key });
+  const OnboardingPage({super.key});
 
   @override
   State<OnboardingPage> createState() => _OnboardingPageState();
@@ -19,7 +19,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     'Build From\nZero to Freedom',
     'Start Together',
   ];
-  
+
   List<String> subtitles = [
     'Our system is helping you to\nachieve a better goal',
     'We rpovide tips for you so that\nyou can adapt easier',
@@ -29,10 +29,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightBackgroundColor,
+      // backgroundColor: lightBackgroundColor,
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center, //agar posisi gambar ditengah
+          mainAxisAlignment:
+              MainAxisAlignment.center, //agar posisi gambar ditengah
           children: [
             CarouselSlider(
               items: [
@@ -48,12 +49,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   'assets/img_onboarding3.png',
                   height: 331,
                 ),
-              ], 
+              ],
               options: CarouselOptions(
                 height: 331,
-                viewportFraction: 1, //digunakan untuk menghide gambar sebelum dan setelahnya pada slider
+                viewportFraction:
+                    1, //digunakan untuk menghide gambar sebelum dan setelahnya pada slider
                 enableInfiniteScroll: false,
-                onPageChanged: (index, reason){
+                onPageChanged: (index, reason) {
                   setState(() {
                     currentIndex = index;
                   });
@@ -78,90 +80,100 @@ class _OnboardingPageState extends State<OnboardingPage> {
               ),
               child: Column(
                 children: [
-                  Text(titles[currentIndex],
-                  style: blackTextStyle.copyWith(
-                    fontSize: 20,
-                    fontWeight: semiBold,
-                  ),
-                  textAlign: TextAlign.center,
+                  Text(
+                    titles[currentIndex],
+                    style: blackTextStyle.copyWith(
+                      fontSize: 20,
+                      fontWeight: semiBold,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(
                     height: 26,
                   ),
                   Text(
-                      subtitles[currentIndex],
-                      style: greyTextStyle.copyWith(
-                        fontSize: 16,
-                      ),
-                      textAlign: TextAlign.center,
+                    subtitles[currentIndex],
+                    style: greyTextStyle.copyWith(
+                      fontSize: 16,
                     ),
-                    SizedBox(
-                      height: currentIndex == 2 ? 38 : 50,
-                    ),
-                    currentIndex == 2 ?
-                    Column(
-                      children: [
-                        CustomFilledButton(
-                          title: 'Get Started',
-                          onPressed: (){
-                            Navigator.pushNamedAndRemoveUntil(context, '/sign-up', (route) => false);
-                          },
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        CustomTextButton(
-                          title: 'Sign In',
-                          onPressed: () {
-                            Navigator.pushNamedAndRemoveUntil(context, '/sign-in', (route) => false);
-                          },)
-                      ],
-                    ) :
-                    Row(
-                      children: [
-                        Container(
-                          width: 12,
-                          height: 12,
-                          margin: const EdgeInsets.only(
-                            right: 10,
-                          ),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: currentIndex == 0 ? blueColor : lightBackgroundColor,
-                          ),
-                        ),
-                        Container(
-                          width: 12,
-                          height: 12,
-                          margin: const EdgeInsets.only(
-                            right: 10,
-                          ),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: currentIndex == 1 ? blueColor : lightBackgroundColor,
-                          ),
-                        ),
-                        Container(
-                          width: 12,
-                          height: 12,
-                          margin: const EdgeInsets.only(
-                            right: 10,
-                          ),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: currentIndex == 2 ? blueColor : lightBackgroundColor,
-                          ),
-                        ),
-                        const Spacer(), //untuk mengisi ruang yg tersisa
-                        CustomFilledButton(
-                          width: 150,
-                          title: 'Continue',
-                          onPressed: () {
-                            carouselController.nextPage();
-                          },
-                          ),
-                      ],
-                    )
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(
+                    height: currentIndex == 2 ? 38 : 50,
+                  ),
+                  currentIndex == 2
+                      ? Column(
+                          children: [
+                            CustomFilledButton(
+                              title: 'Get Started',
+                              onPressed: () {
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, '/sign-up', (route) => false);
+                              },
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            CustomTextButton(
+                              title: 'Sign In',
+                              onPressed: () {
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, '/sign-in', (route) => false);
+                              },
+                            )
+                          ],
+                        )
+                      : Row(
+                          children: [
+                            Container(
+                              width: 12,
+                              height: 12,
+                              margin: const EdgeInsets.only(
+                                right: 10,
+                              ),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: currentIndex == 0
+                                    ? blueColor
+                                    : lightBackgroundColor,
+                              ),
+                            ),
+                            Container(
+                              width: 12,
+                              height: 12,
+                              margin: const EdgeInsets.only(
+                                right: 10,
+                              ),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: currentIndex == 1
+                                    ? blueColor
+                                    : lightBackgroundColor,
+                              ),
+                            ),
+                            Container(
+                              width: 12,
+                              height: 12,
+                              margin: const EdgeInsets.only(
+                                right: 10,
+                              ),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: currentIndex == 2
+                                    ? blueColor
+                                    : lightBackgroundColor,
+                              ),
+                            ),
+                            const Spacer(), //untuk mengisi ruang yg tersisa
+                            CustomFilledButton(
+                              width: 150,
+                              title: 'Continue',
+                              onPressed: () {
+                                carouselController.nextPage();
+                              },
+                            ),
+                          ],
+                        )
                 ],
               ),
             ),
